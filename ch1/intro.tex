@@ -1,0 +1,149 @@
+\chapter{Introduction}
+%\markright{Fang Jin \hfill Chapter 1. Introduction \hfill}
+\section{Overview}
+Social microblogs such as Twitter and Weibo are experiencing explosive growth with billions of users around the globe sharing their daily status updates online. For example, Twitter has more than 255 million average monthly active users (78\% from mobile) per month as of March 31, 2014, and an estimated growth of 25\% per year. In the technology era, online social networks have become a staging ground for modern movements with the Arab Spring being the most prominent example. Interestingly, the role of social networks is not limited to helping organize the activities of disruptive elements. Many key government and news agencies have also begun to embrace Twitter and other social platforms to disseminate information. Without doubt, the analysis of social media networks has become a crucial and irreplaceable task in understanding the social movements.
+
+Social network analysis is the process of gathering data from stakeholder conversations on digital media, and processing into structured insights. These lead to more information-driven decisions, which include but are not limited to understanding social sentiment, discovering topics, identifying ongoing events, and predicting future trends. However, social media as a carrier of information, despite its various forms (Facebook, Twitter, Weibo, etc.) share some common properties in information propagation. Finding those properties in information spreading and making further use of those attributes is never a trivial problem. It requires us to understand the patterns that are hidden in different states of large amounts of social data.
+
+Generally speaking, information diffusion processes have three basic states: transformation, propagation, or nonexistent. In the information flow, it may interact between. Thus this dissertation explores information transition, propagation, absenteeism and their chaining activity. This is not an easy task. We know in social media, millions of users are posting various messages every second. Each one of them is a news publishing center, which results in countless information sources. Multiple propagation paths, mixed messages, obscure sentiment, shifted opinions, and massive data streams make it hard to distinguish between true news and false rumors by only counting the following numbers. Suppose a user holds a neutral attitude towards a social movement, how can his friends exert influence on him in order to sway his opinion? How can this transition process be modeled from exposure to doubting or adoption? By observing the dynamic transition status, how can we identify the information is true news or misinformation?
+
+The interesting part of information propagation is, with different network structure, the information spreading has widely different results. Compared to a sparse network with a compact community, which one spreads information faster? Which node is the key player to exert influence to others? How does one simulate the information propagation process within a network? Besides the social media spread, how does one capture the spread from word-of-mouth? Various studies have shown that social media networks, such as Twitter, are viable as a social “sensor”, and holds great promise for detecting and forecasting significant societal events. With the propagation results from social sensors, can we predict the scale of people involved in real social movements?
+
+In recent years, a significant body of research has focused on modeling bursts and increases of user activity in social media. However, real world events not only correlate with burst signals, but can also exhibit unusually low levels of activity in social networks. We pay attention to information absenteeism, that is situations where the regular active users become inactive. Investigating this phenomenon of unusually calm behavior online holds enormous potential for understanding localized, disruptive societal events. Combined, these scenarios followed by potential burst interactions, allow us to devise models that capture early warnings for group anomaly detection.
+
+With the proliferation of social media, information posted on social media networks announces every aspect of human life. Climate change is not an exception. Climate change is taking place and related topics are discussed everywhere. Temperatures are rising, melting ice caps and glaciers, and extreme weather events are becoming more frequent and more intense. Climate change may drive different forms of conflicts in different regions of the world. For instance, conflict over resources, economic damage, lack of energy supply, pressure on government, etc. The inability of a government to meet the needs of its population as a whole or to provide protection in the face of climate change-induced hardship could trigger frustration, lead to tensions between different ethnic and religious groups within countries and to political radicalization. When climate-related civil unrest events occur all over the world, we wonder why and what triggered its birth? Rome was not built in one day. The same goes for civil unrest. When we try to find the causality of a climate civil unrest, there might be a need to revisit existing news articles, seeking the outline of the story chain which may date back to a small, but extreme weather. We aim to identify the related story chain by clustering news articles based on textual features, spatial features and organizations. By analyzing the story chains, we track the pattern of how climate change sparks civil unrest.
+
+
+In this dissertation, we seek to explore four broad problems based on the information transition, propagation, absenteeism and chaining on social media networks. These are summarized as follows:
+\begin{itemize}
+\item Event classification based on information transition
+\item Event prediction based on information propagation
+\item Event detection based on information absenteeism
+\item Event causality identification based on information chain
+\end{itemize}
+By analyzing information status, with the aid of diffusion tools, we develop models for event classification, event detection, event prediction and event causality chaining.
+
+%A system seeking to predict future events cannot directly measure or represent these abstract latent processes. We can, however, apply feature extraction techniques to infer latent variables such as graph structures and attributes (topics, sentiments, etc.) from observable data streams.
+\section{Main Methods}
+Here an overview of the main information diffusion models utilized within Chapters
+2-5 is presented.
+
+\subsection{Epidemic Model}
+Epidemiological models provide a foundational approach in social network analysis since it elucidate the embedded information diffusion process.
+%Epidemiological models provide a classical approach to study how information diffuses.
+These models typically divide the total population into several compartments
+which reflect the status of an individual. For instance, common compartments
+denote susceptible (S), exposed (E), infected (I), and
+recovered (R) individuals. Individuals transit from one compartment to another, with
+certain probabilities that have to be estimated from data.
+The simplest model, SI, has two states; susceptible (S) individuals get infected (I) by one of their neighbors and stay infected thereinafter. While conceptually easy to understand, it is unrealistic for practical situations.
+The SIS model is popular in infectious disease modeling wherein individuals can transition back and forth between susceptible (S) and infected (I) states (e.g., think of allergies and
+the common cold); this model is often used as the baseline model for more sophisticated approaches.
+The epidemic model SIR was firstly proposed to simulate the disease spreading on population groups in 1927~\cite{kermack1927contribution}, which enables individuals to recover (R) but is not suited for modeling news cascades on Twitter since there is no intuitive mapping to what `recovering' means.
+The SEIZ model (susceptible, exposed, infected, skeptic) proposed by Bettencourt et al.~\cite{powerofgoodidea:2006} takes the interesting approach of introducing an exposed state (E). Individuals in such a state take some time before they begin to believe (I)
+in a story (i.e., get infected).
+
+%The epidemic model SIR was firstly proposed to simulate the disease spreading on population groups in 1927~\cite{kermack1927contribution}, in which they considered a fixed population with only three compartments: susceptible, $S(t)$; infected, $I(t)$; and removed, $R(t)$. The compartments used for this model consist of three classes: $S(t)$ is used to represent the number of individuals not yet infected with the disease at time t, or those susceptible to the disease. $I(t)$ denotes the number of individuals who have been infected with the disease and are capable of spreading the disease to those in the susceptible category. $R(t)$ is the compartment used for those individuals who have been infected and then removed from the disease, either due to immunization or due to death. Those in this category are not able to be infected again or to transmit the infection to others.
+
+%In our work, we basically employ epidemic model and threshold model to represent the information diffusion process.
+%The epidemic model assume each individual is independent, when it interact with some other members, the influence rate keeps the same.
+%Epidemic model traditionally being employed to represent the disease spreading process. However, as the disease spreading shared with the same properties with information propagation, recently it was introduced into social information area.
+%Specially, we employ epidemic model to express the temporal information transition.
+
+
+%\paragraph{Influence model}
+%(see introductions of the diffusion model, decide how to classify the models.)
+%introduce the threshold model definition.
+%How to decide the threshold? Some work select the threshold randomly, some work define it by
+%in our work, we introduce a trust function.
+
+\subsection{Geometric Brownian Motion}
+Brownian Motion is the random motion of particles suspended in a fluid (a liquid or a gas) resulting from their collision with the quick atoms or molecules in the gas or liquid. The term ``Brownian motio'' can also refer to the mathematical model used to describe such random movements, which is often called a particle theory~\cite{morters2010brownian}.
+
+
+Geometric Brownian Motion is a continuous-time stochastic process in which the logarithm of the randomly varying quantity follows a Brownian motion (also called a Wiener process) with drift. It is an important example of stochastic processes satisfying a stochastic differential equation (SDE); in particular, it is used in mathematical finance to model stock prices (such as the price of a stock over time), subject to random noise.
+
+%\paragraph{Definition of GBM}
+A stochastic process $S_t$ is said to follow a Geometric Brownian Motion if it satisfies the following stochastic differential equation:
+$$d S_t = \mu S_t dt + \delta S_t dW_t $$
+we call $W_t$ as a Wiener process (Brownian Motion) and $\mu$ the drift, $\delta$ the volatility.
+
+Consider a Brownian motion trajectory that satisfy the differential equation, $\mu S_t dt$ controls the `trend' of this trajectory and the term $\delta S_t W_t$ controls the `random noise' effect in the trajectory. The analytical solution of this geometric brownian motion is given by $$S_t = S_0 exp((\mu-\frac{\delta^2}{2})t + \delta W_t) $$
+According to the GBM properties, $ln(S_{t}^{ij})$ is a Gaussian variable given by:
+$$ln(S_{t}^{ij})\sim \mathcal{N}((\mu - \frac{\sigma^2}{2})t, \sigma ^{2}t)$$
+
+
+
+\subsection{Graph Wavelet}
+Graphical model has three folds of benefits: (a)represent the social network (structure), (b) perform inference between nodes/edges (c) capture the properties of the social network. We employ the graphical model for spacial information propagation.
+
+Classic wavelet is called mathematical microscope since it is capable of showing signal abnormality with different scales. Wavelets help analyze signals which contain features that vary in time, space and frequency (scale). In the case of complex networks, graph wavelets render the graph with good localization properties both in frequency and vertex (i.e. spatial) domains. Their scaling property allows us to zoom in/out of the underlying structure of the graph.
+
+
+\section{Goals of the Dissertation}
+The overall aim of this dissertation is to identify modeling approaches and strategies that identify information propagate patterns. We propose three broad problems within those scopes that we seek to explore.
+\paragraph{Topic 1: News and Rumor Propagation in Social Networks}
+
+Quantifying information diffusion on social network has been an interesting and unresolved problem for several years now. A better understanding of information diffusion, especially how news and rumors propagate through a network empower us to design strategies that can enhance spreading of news and curbing of rumors. Epidemic models have been used in the past to study information diffusion based on an assumption that rumor/news spreading is no different than the propagation of a contagious disease.
+
+We use an enhanced epidemic model SEIZ that has been specifically designed for information diffusion. The model introduces one more compartment called exposed (E), which refers to the individuals who has been exposed to a story but have still not adopted/rejected it. We use five true news stories and three rumors from varied geographical locations and topics. We also introduce a one-step graph transfer model that can mimic step by step information propagation on Twitter. Our experimental results prove that SEIZ model is far more accurate in describing information diffusion than the other baseline epidemic models. Further, our one-step graph transfer model imitates information cascades of the stories with a very reasonable error.
+
+\paragraph{Topic 2: Mass Protest Adoption in Social Networks}
+
+Modeling the movement of information within social media outlets, like
+Twitter, is key to understanding to how ideas spread but quantifying such
+movement runs into several difficulties. Two specific areas that elude a clear
+characterization are (i) the intrinsic random nature of individuals to
+potentially adopt and subsequently broadcast a Twitter topic, and (ii) the
+dissemination of information via non-Twitter sources, such as news outlets
+and word of mouth, and its impact on Twitter propagation. These distinct
+yet inter-connected areas must be incorporated to generate a
+comprehensive model of information diffusion. We propose a bispace model
+to capture propagation in the union of (exclusively) Twitter and
+non-Twitter environments. To quantify the stochastic nature of Twitter
+topic propagation, we combine principles of geometric Brownian motion and
+traditional network graph theory. We apply Poisson process functions to model
+information diffusion outside of the Twitter mentions network. We discuss techniques
+to unify the two sub-models to accurately model information dissemination. We
+demonstrate the novel application of these techniques on real
+Twitter datasets related to mass protest adoption in social communities.
+
+\paragraph{Topic 3: Information Absenteeism Detection on Social Graphs}
+
+Event detection in online social media has primarily focused on identifying
+abnormal spikes, or bursts, in activity. However, disruptive events such as socio-economic disasters, civil unrest, and even power outages, often result in abnormal troughs involving group absenteeism of activity. We present the first study, to our knowledge, that models absenteeism and uses detected absenteeism as a basis for event detection in location based social networks (LBSN) such as Twitter. Our framework addresses the challenges of (i) early detection of absenteeism, (ii) identifying the point of origin, and (iii) identifying groups or communities underlying the absenteeism. Our approach uses the formalism of graph wavelets to represent the spatiotemporal structure and user activity in a LSBN. This formalism affords multiscale analysis, enabling us to detect anomalous behavior at different graph resolutions, which in turn allows identification of event location and anomalous groups underlying the network. We introduce a systematic two-pass detection method using graph wavelets to detect group absenteeism and then check if there is a subsequent activity spike.
+
+\paragraph{Topic 4: Information Chain Clustering on Social Media}
+There is growing consensus that the anticipated physical effects of climatic changes will have serious implications for human wellbeing and security, but quantitative efforts to assess how the impacts will influence the future probability of armed conflict is relatively limited. If the impact of climate change is going to make regions of violence poorer, then they really provide a level of fertility for inciting disaffection and resentment against the prosperous world or unresponsive government. It is likely that physical and economic disruptions resulting from climate change could heighten tensions in sensitive areas of the world. From climate change to social unrest, there could be a series of incidents/factors which ferment discontentment step by step, and eventually lead to civil unrest. However, how the interactions between climate change or extreme weather and civil unrest, how it finally evolves into social movement is still unclear. We aim to dig through historical news/posts and find the information chain of a climate civil unrest. By building nearest neighbor filter, we are able to classify climate protest events from various other civil unrest types. By employing storytelling algorithm, we can link the similar news into one chain. By analyzing one independent story chain, we are able to extract their interaction patterns.
+
+\section{Organization of the Dissertation}
+The remainder of the dissertation proposal is organized as follows.
+
+In chapter 2, we investigate the problem of distinguishing news and rumor in social networks. Here we design strategies that can enhance the spreading of news and the curbing of rumors. We present how to simulate the `doubt' and `believe' sentiment propagations. We also introduce a one-step graph transfer model that can mimic step by step information propagation on Twitter. Finally, we test the models using five true news stories and three rumors from varied geographical locations and topics. Chapter 3 shows an extended work of chapter 2, we study the problem of misinformation propagation in the era of Ebola. All the experiments are conducted on Ebola-related rumors and all the evaluations are based on real-world data.
+
+In chapter 4, we address the problem of multiple spaces information dissemination, such as via social networks and outlets such as word of mouth. Specifically, we introduce a trust function to simulate how users are influenced by their friends through direct mention using the `@' symbol. We present how our bispace model can capture propagation in the union of (exclusively) Twitter and non-Twitter environments.
+
+In chapter 5, we propose two ongoing studies. Section 5.1 defines social network movements by an undirected, weighted graph. We pay attention to absenteeism vectors and model absenteeism on graphs and uses detected absenteeism as a basis for event detection. Section 5.2 deals with a problem of identifying causality between civil unrest and climate change. By analyzing large historical news report and social media posts, we intend to develop methods to detect the information chain which can tell us how a climate change event evolve into a social movement.
+
+
+%\paragraph{Titles candidates}
+%\begin{itemize}
+%\item Information Transition, Propagation and Absenteeism in Social Networks
+%\item Event Classification, Detection and Prediction based on Information Diffusion in Social Networks
+%\end{itemize}
+
+%\paragraph{Chapter candidates}
+%\begin{itemize}
+%\item News and Rumor Propagation in Social Networks
+%\item Mass Protest Adoption in Social Networks
+%\item Information Absenteeism Detection on Social Graphs
+%\end{itemize}
+
+%\paragraph{Introduction subsection candidates}
+%\begin{itemize}
+%\item Temporal Information Propagation
+%\item Spatial Information Propagation
+%\item Spatio-temporal Information Propagation
+%\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

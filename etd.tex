@@ -1,0 +1,179 @@
+%
+% PROJECT: <ETD> Electronic Thesis and Dissertation Initiative
+%   TITLE: LaTeX report template for ETDs in LaTeX
+%  AUTHOR: Neill Kipp, nkipp@vt.edu
+%     URL: http://etd.vt.edu/latex/
+% SAVE AS: etd.tex
+% REVISED: September 6, 1997 [GMc 8/30/10]
+%
+
+% Instructions: Remove the data from this document and replace it with your own,
+% keeping the style and formatting information intact.  More instructions
+% appear on the Web site listed above.
+
+\documentclass[12pt,dvips]{report}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.5in}
+\setlength{\evensidemargin}{0in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\topmargin}{0in}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.1in}
+
+% Uncomment for double-spaced document.
+% \renewcommand{\baselinestretch}{2}
+
+% \usepackage{epsf}
+\usepackage[pdftex]{graphicx}
+\usepackage{import}
+
+\usepackage{subfigure}
+\usepackage{mathrsfs}
+\usepackage[normalem]{ulem}
+\usepackage{array}
+\usepackage[lined,boxed,commentsnumbered]{algorithm2e}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{caption}
+\usepackage{algorithmic}
+
+\newcommand{\argmin}{\arg\!\min}
+\newcommand{\argmax}{\arg\!\max}
+
+\begin{document}
+
+\thispagestyle{empty}
+\pagenumbering{roman}
+\begin{center}
+
+% TITLE
+{\Large
+Information Transition, Propagation and Absenteeism \\ in Social Networks
+}
+%Temporospatial Information Propagation in Social Networks
+%Information Transition, Propagation and Absenteeism in Social Networks
+%Event Classification, Detection and Prediction based on Information Diffusion in Social Networks
+
+
+\vfill
+
+Fang Jin
+
+\vfill
+
+Preliminary proposal submitted to the Faculty of the \\
+Virginia Polytechnic Institute and State University \\
+in partial fulfillment of the requirements for the degree of
+
+\vfill
+
+Doctor of Philosophy \\
+in \\
+Computer Science and Applications
+
+\vfill
+
+Naren Ramakrishnan, Chair \\
+Chang-Tien Lu \\
+Chris North \\
+Yang Cao \\
+Feng Chen
+
+\vfill
+
+Nov 10, 2015 \\
+Arlington, Virginia
+
+\vfill
+
+Keywords: Information Propagation, Information Absenteeism, Event Detection, Social Networks
+\\
+Copyright 2015, Fang Jin
+
+\end{center}
+
+\pagebreak
+
+\thispagestyle{empty}
+\begin{center}
+
+{\large
+%Event Classification, Detection and Prediction based on Information Diffusion in Social Networks
+Information Transition, Propagation and Absenteeism\\ in Social Networks
+}
+
+\vfill
+
+Fang Jin
+
+\vfill
+
+(ABSTRACT)
+\vfill
+
+\end{center}
+
+As social media continues to increase in popularity, it has become not only a venue to broadcast rumors and misinformation, but also a means of mobilization and strategic interaction between key players of social movements, e.g., protests. Characterizing information diffusion on social networks enables us to understand the properties of underlying media and model communication patterns. However, there are still some challenges (1) Even though modeling the movement of information throughout social media outlets is key to understanding how ideas spread, quantifying such movement is not easy due to the intrinsic random nature of individuals to potentially adopt and subsequently broadcast a Twitter topic. (2) Information spikes or bursts have been widely studied in event detection in online social media. However, group absenteeism of activity, has always served as a warning signal but is often ignored in disruptive events such as socio-economic disasters, civil unrest, and even power outages. (3) There is growing consensus that climate change is exerting a significant influence in human beings and society security, but quantitative efforts to assess how this impact will influence the future probability of civil unrest is relatively limited. In this dissertation, we seek to solve the above problems by modeling information diffusion and adoption, and analyze the dynamic information flow on social networks.
+
+
+
+\vfill
+
+% GRANT INFORMATION
+
+This work was supported by the Intelligence Advanced Research Projects Activity
+(IARPA) via Department of Interior National Business Center (DoI/NBC)
+contract number D12PC000337. The US Government is authorized to
+reproduce and distribute reprints for Governmental purposes
+notwithstanding any copyright annotation thereon. The
+views and conclusions contained herein are those of the authors and
+should not be interpreted as necessarily representing the official
+policies or endorsements, either expressed or implied, of NSF, IARPA,
+DoI/NBC, or the US Government.
+
+\pagebreak
+
+% Dedication and Acknowledgments are both optional
+% \chapter*{Dedication}
+% \chapter*{Acknowledgments}
+
+\tableofcontents
+\pagebreak
+
+\listoffigures
+\pagebreak
+
+\listoftables
+\pagebreak
+
+\pagenumbering{arabic}
+\pagestyle{myheadings}
+
+\subimport{ch1/}{ch1.tex}
+\subimport{ch2/}{ch2.tex}
+\subimport{ch3/}{ch3.tex}
+\subimport{ch4/}{ch4.tex}
+\subimport{ch5/}{ch5.tex}
+
+
+
+
+% If you are using BibTeX, uncomment the following:
+% \thebibliography
+%
+% Otherwise, uncomment the following:
+% \chapter*{Bibliography}
+
+\bibliographystyle{abbrv}
+%Warning: don't put space after the comma in the following commands
+\bibliography{bib/intro,bib/rumor,bib/ebola,bib/GBM,bib/wavelet}
+
+% \appendix
+
+% In LaTeX, each appendix is a "chapter"
+% \chapter{Program Source}
+
+
+\end{document}

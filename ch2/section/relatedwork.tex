@@ -1,0 +1,87 @@
+\section{Related work}
+Related work falls in three categories.
+\paragraph{Information Diffusion}
+Significant work has gone into research on information diffusion on
+social media,
+%Information diffusion in social networks is a well-researched topic, by
+%both social scientists and data miners. One of the earlier ideas in this
+%space was proposed by Everett Rogers in his theory ``Diffusion of
+%Innovations" ~\cite{Rogers-diffusion1962} where he explained how, why, and
+%at what rate do ideas spread through cultures. In recent years, online social networks have provided social scientists with
+%an unprecedented amount of information, leading to a wide range of algorithmic
+%approaches. There are some papers focusing on the information diffusion across topics and time on Twitter, such as
+e.g., see~\cite{Cha10measuringuser,Kwak:2010:TSN:1772690.1772751,Romero:2011:DMI:1963405.1963503,Yang_predictingthe}.
+Recently, Matsubara etc.~\cite{matsubara2012rise}
+conducted research on the rise and fall patterns of information diffusion, and managed to
+capture the power-law fall pattern and periodicities inherent in such data.
+Gomez-Rodriguez et al.~\cite{GomezRodriguez:2010:IND:1835804.1835933}
+built a cascade transmission model to track cascading process taking place over a network; they traced overall blogs and news for a one-year period and found that the top 1000 media sites and blogs tend to have a
+core-periphery structure.
+%Kimura et al.\cite{Kimura:2009:EEI:1661445.1661772} discuss
+%an approach to reduce the computational complexity of identifying most influential nodes in a large-scale network. They used two stochastic diffusion models and proposed a greedy algorithm on the basis of bond percolation and graph theory to reduce computational complexity. By modeling an email network as a graph, Wu et al \cite{WuFang2004b} found that the probability of a node forwarding a meme to a neighboring node decays as the graph distance between the node and the source increases. Gruhl et al. \cite{Gruhl04informationdiffusion} proposed a transmission graph to study information diffusion in the blogosphere, where they computed the probability that the topic will traverse the edge, following this they recomputed the posteriors and cycled through the process until convergence.
+%%comprises a set of authors connected in a directed graph. Using the current version of the transmission graph, for each topic and each pair of authors they computed the probability that the topic will traverse the edge.
+%
+\paragraph{Epidemiological models}
+Mathematical modeling of disease spread not only provides vital information about the propagation of the disease in a human network, but also offers insight into the strategies that can be used to control them.
+%Kermack and McKendrick~\cite{Kermack1927Royal} study the effect of various factors that govern the spread of contagious epidemics in a population and are considered as one of the pioneers in this area. Later, Daley et al. \cite{Daley-nature-1964} suggested an analogy between the spread of disease and the dissemination of information and used epidemiological models to describe the growth and decay of rumor spreading processes. They divided the population into three mutually exclusive classes based on their dissemination of a rumor: have not heard it,
+%are actively spreading it, and have stopped spreading the rumor.
+%%This %division of the human population allowed them to apply the
+%Kermack-McKendrick epidemic model to the propagation of a rumor.
+The classification of the human population into different groups forms
+the basic premise of using epidemiological models for modeling
+information diffusion.
+The two widely used such models are SIR (Susceptible, Infected, Recovered) and SIS (Susceptible, Infected, Susceptible) models. Newman et al.~\cite{PhysRevE.66.016128} showed that a large class of standard
+epidemiological models, viz. the SIR models, can be solved exactly on a wide variety of networks, and confirmed the correctness of solutions with numerical simulations of SIR epidemics on networks. Kimura et al.~\cite{Kimura:2009:EEI:1661445.1661772} proposed the application
+of the SIS model to study information diffusion where the nodes can be activated multiple times.
+%In our paper, we also applied SIS model for news and rumor spreading over Twitter.
+%They created a layered graph from the social network where layers gets added on top of each other and then apply bond percolation with a pruning strategy with an intent to lower the computational complexity of the SIS model.
+% \cite{Alison2010-Society} use a modified SIS model to prove emotions spreads very much like an infectious disease.
+%tried to evaluate the spread of long-term emotional states across a social network using a modified SIS model which included the possibility of spontaneous infection. They were able to provide evidence that emotions spreads very much like an infectious disease.
+Zhao et al.~\cite{RePEc:eee:phsmap:v:392:y:2013:i:4:p:987-994} proposed an SIHR (Spreaders, Ignorants, Hibernators, Removed) rumor spreading model,
+with forgetting and remembering mechanisms to simulate rumor spreading in inhomogeneous networks.
+Xiong et al.~\cite{Xiong20122103} proposed a diffusion model with four different states: susceptible, contacted, infected, and refractory (SCIR) to identify the threshold value of the spreading rate approaches almost zero.
+%They study information diffusion on Twitter using the retweeting mechanism.
+%There were able to identify that the threshold value of the spreading rate approaches almost zero and that the degree-based density of infected agents increases with the degree monotonously.
+Bettencourt et al.~\cite{powerofgoodidea:2006} proposed the SEIZ (susceptible, exposed, infected, skeptic) model to capture the adoption of Feynman diagrams by using the publication counts after World War II. They extract the general features for idea spreading and estimate the idea adoption process. Their result showed that
+the SEIZ model can fit the long term idea adoption process with reasonable error, but does not demonstrate whether this model can be applied on large scale datasets, or whether can be applied on Twitter, where the story unfolds in real-time.
+
+\paragraph{Rumor modeling}
+As far as we know, Daley~\cite{Daley-nature-1964} first proposed the similarity between epidemics and rumors using mathematical analysis. Some researchers have studied rumor propagation modeling in different network topologies~\cite{nekovee2007theory,zanette2002dynamics}; however,
+they do not provide any discussion of propagation differences between news and rumors.
+Shah et al.~\cite{shah2011rumors} detect rumor sources in network using maximum likelihood modeling.
+In~\cite{budak2011limiting}, Budak et al. prove that minimizing the spread of the misinformation (i.e., rumors)
+in social networks is an NP-hard problem and also provide
+a greedy approximate solution. Castillo et al.~\cite{castillo2011information} delve into twitter content modeling, such as sentiment analysis and
+hashtags to identify rumors, while Qazvinian et al.~\cite{qazvinian2011rumor} try to address this issue using broader linguistic methods,
+to learn possible features of rumor and determine whether a twitter
+user believes a rumor or not. More related work appears
+in~\cite{Isham-physica-2009,PhysRevE.81.056102}. Our goal is to develop an understanding of
+these processes using diffusion models.
+%
+%Trpevski et al. \cite{PhysRevE.81.056102} used the SIS model to study how two different rumors propagate in a network, Zhou et al.~\cite{Zhou2007458} studied rumor propagation in complex networks using the SIR model, while Zhao et al \cite{RePEc:eee:phsmap:v:392:y:2013:i:4:p:987-994} proposed a modified SIR model where they assumed that ignorants will inevitably change their status to either spreaders or stiflers after getting contacted by the spreaders, and Ishama et al. \cite{Isham-physica-2009} try to find the final size of a rumor on a homogeneous network using the stochastic SIR epidemic model, where they applied embedded Markov chain techniques to derive a set of equations that can be solved numerically to identify the spread of a rumor.
+%These two rumors are initiated with different probabilities of acceptance. They found that one of
+%the rumors is typically more dominant in the network compared to other.
+%However, all their research works are based on simulation modeling whereas our work here are trying to model actual news and rumor propagation on Twitter.
+%
+% Compared with our approach, we are trying to identify rumors from diffusion properties, via an extended epidemic model SEIZ \cite{powerofgoodidea:2006}, from which we can get a ratio of the rate at which people get exposed (and not believe) to the rate at which people move from exposed to belief. We think the different distributions of the max ratio might shed some light on news and rumor detection. while they didn't address the dynamic rumor propagation models in twitter.
+%\narenc{is it skeptics or is it skeptic? Pick one and stick with it.}
+
+%\narenc{The related work in general is very poorly written. It reads like this:
+%
+%A et al.. did this.
+%B et al. did this.
+%C et al. did this.
+%
+%There is no structure, no organization. You need a good story. The sentences
+%have to be more tightly linked. Look at some of my papers to get
+%an idea. You don't need 1 sentence for each paper. You can group papers
+%further and cite them together. For instance: Some papers [CITE1, CITE2]
+%take the approach of WHATEVER. The whole related work must be in 1 page
+%but without losing any citations. }
+
+%\narenc{Looks like this is not just
+%tweet news dataset. It contains both news and rumors. And it is not
+%a dataset. It is many datasets. You can just call it Tweet datasets studied
+%in this paper. Replace 'Real' by 'Type' so that the types are
+%News and Rumor, not True and Rumor. Remove Lang, Collection columns.}
+

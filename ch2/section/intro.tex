@@ -1,0 +1,81 @@
+\section{Introduction}
+Online social networks have become a staging ground for modern
+movements, with the Arab Spring being the most prominent example.
+Nine out of ten Egyptians and Tunisians responded to a poll indicating
+that they used Facebook to organize protests and spread awareness.
+%\footnote{http://www.thenational.ae/news/uae-news/facebook-and-twitter-key-to-arab-spring-uprisings-report}.
+As a precautionary measure, governments have taken to
+blocking social networking websites, showcasing the importance of understanding
+this phenomenon.
+
+Interestingly, the role of social networks is not limited to
+helping organize the activities of disruptive elements.
+Many key government and news
+agencies have also begun to embrace Twitter and other social platforms
+to disseminate information.
+After the tragic 2013 explosions at the Boston Marathon, the
+FBI resorted to online social networks to broadcast crucial information
+about the suspects. The viral diffusion of information provided them with
+vital information about the suspects.
+At the same time it is well known
+that online activity on sites
+such as Reddit led to mistaken identification of some individuals
+and the spread of several rumors.
+
+We were motivated to apply the latest in epidemiological modeling to understand
+information diffusion on Twitter, in relation to the spread
+of both news and rumors.
+Epidemiological models provide
+a classical approach to study how information diffuses.
+These models typically divide the total population into several compartments
+which reflect the status of an individual. For instance, common compartments
+denote susceptible (S), exposed (E), infected (I), and
+recovered (R) individuals. Individuals transit from one compartment to another, with
+certain probabilities that have to be estimated from data.
+The simplest model, SI, has two states; susceptible (S) individuals get infected (I) by one of their neighbors
+and stay infected thereinafter. While conceptually easy to understand,
+it is also unrealistic
+for practical situations. The SIS model is
+popular in infectious disease modeling wherein individuals can transition back
+and forth between
+susceptible (S) and infected (I) states (e.g., think of allergies and
+the common cold); this model is often used as the
+baseline model for more sophisticated approaches. The SIR model
+enables individuals to
+recover (R) but is not suited for modeling news cascades on Twitter since there
+is no intuitive mapping to what `recovering' means.
+The SEIZ
+model (susceptible, exposed, infected, skeptic) proposed by Bettencourt et al.~\cite{powerofgoodidea:2006}
+takes the interesting approach of introducing an exposed state (E).
+Individuals in such a state take some time before they begin to believe (I)
+in a story (i.e., get infected). While the authors
+of~\cite{powerofgoodidea:2006}
+used this approach to model the adoption of Feynman
+diagrams by communities of physicists, our work explores their use in
+modeling news and rumors on Twitter.
+
+%{\color{blue} However, the traditional epidemic model SIR (susceptible, infected, Recovery) is not quite suitable for Twitter propagation since once people accept an idea, it is hard to ``recovery". Hence, in this paper for news spreading, we don't consider ``R".}
+
+The key contributions of this paper are:
+
+\begin{itemize}
+\item Our work is the first to employ the SEIZ model to model real Twitter
+datasets. We employ non-linear least squares optimization of the underlying
+systems of ODEs over
+tweet data, and demonstrate how this model is better at modeling
+rumor and news diffusion
+than the traditional SIS model.
+\item We analyze
+eight representative stories (four true events and
+four rumors) across a range of topics (politics, terrorism, entertainment, and crime) and over several
+geographic regions (USA, Mexico, Venezuela, Cuba, Vatican). While not
+an exhaustive list, this demonstrates the wide applicability of the
+proposed model.
+\item We demonstrate the capability of the SEIZ model to quantify
+compartment transition dynamics. We showcase how such information
+could facilitate the development of screening criteria for distinguishing rumors from real news happenings on Twitter.
+
+\end{itemize}
+
+
+

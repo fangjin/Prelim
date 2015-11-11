@@ -1,0 +1,68 @@
+\section{Related Work}
+We briefly review related work next, which comes from multiple areas.
+
+\par \noindent
+{\bf Social movements:}
+Oliver and Myers~\cite{oliver1998diffusion}
+develop a foundation for theoretical insights of social movements and
+describe the limitations of simplified models. The Arab Spring of  2010
+served as a context for many
+researchers~\cite{gonzalez2011dynamics, bond201261, tufekci2012social, conover2013digital, saad2013mass}
+to study the role
+social networking sites play in the spread and recruitment
+of participants in protests.
+A detailed anatomy of
+modern social protests is described by Saad-Filho~\cite{saad2013mass}
+with the June 2013 anti-government protests in Brazil as a context.
+In this work, we study the processes and sociological impacts of protests
+in the modern era, fortified by online social networks and the
+communities in and around them.\\
+
+\vspace{-0.1in}
+\noindent
+{\bf Information diffusion in networks:}
+Previous studies have approached the modeling of information propagation and
+diffusion in social networks through several means, e.g.,
+contagion models (SIR~\cite{castellini2007propagation}\, SISa~\cite{hill2010emotions}), diffusion based threshold and cascade models~\cite{kempe2003maximizing}, rise-and-fall patterns~\cite{matsubara2012rise}, coverage models~\cite{singer2012win}, and survival theory~\cite{rodriguez2013modeling}. A good survey of
+different models of information diffusion is presented in~\cite{guille2013information}.\\
+
+\vspace{-0.1in}
+\noindent
+{\bf External influences:}
+We believe that the effects of influences that originate external
+to the observed diffusion network, such as mass media
+and offline spread of information, can impact the way in which information
+flows within the online network.
+Myers et al.~\cite{myers2012information} study the emergence of URLs
+on Twitter with a probabilistic generative process using both
+internal and external exposure curves in a contagion-like model.
+Similar attention to the role of external factors is
+paid by Crane and Sornette~\cite{crane2008robust} for
+tracking the popularity of YouTube videos using a diffusion model.
+Iwata et al.~\cite{iwata2013discovering} use
+a shared cascade Poisson process model to discover
+latent influences in social activities such as item adoption.
+Using shared parameters among multiple Poisson processes, they were able to simulate sequences of item adoption events. \\
+
+\vspace{-0.1in}
+\noindent
+{\bf Brownian motion:}
+Zhou and colleagues (e.g.,~\cite{zhou2003distance, zhou2003network,
+zhou2004network}) develop the notion of Brownian motion on networks
+which they
+use to discover communities of hierarchical structure both locally
+and globally. We extend this approach in this paper
+to formulate a propagation algorithm based on geometric Brownian
+motion (GBM). Borrowed from statistical physics, GBM has been
+used heavily in finance to model stock price movements.
+Scale invariance and the ability to model abrupt bumps
+along propagation paths are the primary motivations for using GBMs
+to model stochastic processes~\cite{tankov2004financial}. \\
+
+\vspace{-0.1in}
+\noindent
+Our work builds on the concepts
+introduced in~\cite{zhou2003network, iwata2013discovering, zhou2003distance, zhou2004network} but differs from the other diffusion models
+described earlier by considering both the role of communities of
+users and the abrupt nature of propagation of volatile information such as mass social protests. We include the notion of bispace where both latent (attributed to external influences) and observed user network influences are considered. We infer propagation rates for communities in the observed network and allow
+implicit recruitment of users into protest actions through a Poisson process.
