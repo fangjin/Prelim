@@ -93,40 +93,40 @@ In this paper we use an initial trust of $S_0 = 1$ without loss of generality.
 
 
 
-\begin{algorithm}
-\label{alg:gbm_prop}
-\SetKwData{Left}{left}\SetKwData{This}{this}\SetKwData{Up}{up}
-\SetKwFunction{Union}{Union}\SetKwFunction{FindCompress}{FindCompress}
-\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
-\SetAlgoLined
-\Input{mentions network $G(V,E)$, time step $\delta t$, propagation time $T$}
-\Output{infected users}
-        \For{\textrm{each infected user} $v_i \in V$}
-	{	
-	 \For{\textrm{each non-infected user} $v_j \in N(v_i)$}
-	   { set $t_{ij}=0$;}
-	     set $v_i$ as \textrm{not newly infected user}
-        }
- t = 0; \\
-\For{$t \leq T$}{
-    \For{each infected user $v_i \in V$}
-	{  \If{$v_i$ is \textrm{a newly infected user}}
-	   {
-	 \For{\textrm{each non-infected user} $v_j \in N(v_i)$}
-	   { set $t_{ij}=0$;}
-	    set $v_i$ as \textrm{not newly infected user}
-           }	
-	 \For{\textrm{each non-infected user} $v_j \in N(v_i)$} 	
-	   {      set $t_{ij}=t_{ij}+\delta t$ \\
-	   $ln(S_{t}^{ij})\sim \mathcal{N}((\mu - \frac{\sigma^2}{2})t_{ij}, \sigma ^{2}t_{ij})$ \\
-        \If{$ln(S_{t}^{ij})\geq d_{ij} $}
-	   {set \textrm{user $v_j$ as newly infected}}
-        }
-     }
-    $t=t+\delta t;$
-}
-\caption{GBM propagation algorithm}
-\end{algorithm}
+%\begin{algorithm}
+%\label{alg:gbm_prop}
+%\SetKwData{Left}{left}\SetKwData{This}{this}\SetKwData{Up}{up}
+%\SetKwFunction{Union}{Union}\SetKwFunction{FindCompress}{FindCompress}
+%\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+%\SetAlgoLined
+%\Input{mentions network $G(V,E)$, time step $\delta t$, propagation time $T$}
+%\Output{infected users}
+%        \For{\textrm{each infected user} $v_i \in V$}
+%	{	
+%	 \For{\textrm{each non-infected user} $v_j \in N(v_i)$}
+%	   { set $t_{ij}=0$;}
+%	     set $v_i$ as \textrm{not newly infected user}
+%        }
+% t = 0; \\
+%\For{$t \leq T$}{
+%    \For{each infected user $v_i \in V$}
+%	{  \If{$v_i$ is \textrm{a newly infected user}}
+%	   {
+%	 \For{\textrm{each non-infected user} $v_j \in N(v_i)$}
+%	   { set $t_{ij}=0$;}
+%	    set $v_i$ as \textrm{not newly infected user}
+%           }	
+%	 \For{\textrm{each non-infected user} $v_j \in N(v_i)$} 	
+%	   {      set $t_{ij}=t_{ij}+\delta t$ \\
+%	   $ln(S_{t}^{ij})\sim \mathcal{N}((\mu - \frac{\sigma^2}{2})t_{ij}, \sigma ^{2}t_{ij})$ \\
+%        \If{$ln(S_{t}^{ij})\geq d_{ij} $}
+%	   {set \textrm{user $v_j$ as newly infected}}
+%        }
+%     }
+%    $t=t+\delta t;$
+%}
+%\caption{GBM propagation algorithm}
+%\end{algorithm}
 
 
 \subsection{GBM propagation}
