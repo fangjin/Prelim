@@ -73,7 +73,7 @@ According to the properties of a Wiener process~\cite{oksendal2003stochastic},
 $dW_t$ is essentially Gaussian white noise and contributes to our
 equation as:
 \begin{equation}\frac{d S_t}{S_t} = \mu {dt}+\sigma dW_t\end{equation}
-In this way, we modeled the trust function $S_t$ as a geometric Brownian motion (GBM) process which is a continuous-time stochastic process~\cite{oksendal2003stochastic}. Per convention, we call $\mu$ the drift and $\sigma$ the volatility. The drift represents deterministic trends while the volatility refers to the influence of unpredictable events in this model~\cite{wiersema2008brownian}. For simplicity, we consider $\mu$ and $\sigma$ to be constant during the pre-trust period in this paper. (Our concern here primarily is with this period.)
+In this way, we modeled the trust function $S_t$ as a geometric Brownian motion (GBM) process which is a continuous-time stochastic process~\cite{oksendal2003stochastic}. Per convention, we call $\mu$ the drift and $\sigma$ the volatility. The drift represents deterministic trends while the volatility refers to the influence of unpredictable events in this model~\cite{wiersema2008brownian}. For simplicity, we consider $\mu$ and $\sigma$ to be constant during the pre-trust period in this chapter. (Our concern here primarily is with this period.)
 
 
 According to It\={o}'s theorem~\cite{oksendal2003stochastic}, given the initial value $S_0$,
@@ -89,7 +89,7 @@ The above solution for $S_{t}$ is a log-normally distributed random variable wit
 \begin{equation}
  {Var}(S_{t})=S_0^2e^{{2\mu t}}\left(e^{{\sigma ^{2}t}}-1\right)
 \end{equation} $S_t$ is a geometric Brownian motion stochastic process, which is typically denoted as $\mathcal{B}(\mu,\sigma)$.
-In this paper we use an initial trust of $S_0 = 1$ without loss of generality.
+In this chapter we use an initial trust of $S_0 = 1$ without loss of generality.
 
 
 
